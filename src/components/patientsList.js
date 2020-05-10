@@ -5,8 +5,10 @@ const patientsList = [
     problem: "Diabities",
     age: "20",
     phone: 123456789,
-    image: "user.png",
-    gender: "Male"
+    image: "https://www.w3schools.com/w3images/avatar2.png",
+    gender: "Male",
+    contact: "9874563215",
+    previous: "xyz"
   },
   {
     id: 2,
@@ -14,8 +16,10 @@ const patientsList = [
     problem: "Headache",
     age: "30",
     phone: 987654321,
-    image: "user.png",
-    gender: "Male"
+    image: "https://www.w3schools.com/w3images/avatar2.png",
+    gender: "Male",
+    contact: "9874563215",
+    previous: "xyz"
   },
   {
     id: 3,
@@ -23,8 +27,10 @@ const patientsList = [
     problem: "Thyroid",
     age: "18",
     phone: 789456123,
-    image: "user.png",
-    gender: "Male"
+    image: "https://www.w3schools.com/w3images/avatar2.png",
+    gender: "Male",
+    contact: "9874563215",
+    previous: "xyz"
   },
   {
     id: 4,
@@ -32,8 +38,10 @@ const patientsList = [
     problem: "Fever",
     age: "45",
     phone: 8745123695,
-    image: "user.png",
-    gender: "Male"
+    image: "https://www.w3schools.com/w3images/avatar2.png",
+    gender: "Male",
+    contact: "9874563215",
+    previous: "xyz"
   },
   {
     id: 5,
@@ -41,8 +49,10 @@ const patientsList = [
     problem: "Injured",
     age: "71",
     phone: 9874156315,
-    image: "user.png",
-    gender: "Male"
+    image: "https://www.w3schools.com/w3images/avatar2.png",
+    gender: "Male",
+    contact: "9874563215",
+    previous: "xyz"
   },
   {
     id: 6,
@@ -50,8 +60,10 @@ const patientsList = [
     problem: "Cough",
     age: "15",
     phone: 98652314755,
-    image: "user.png",
-    gender: "Male"
+    image: "https://www.w3schools.com/w3images/avatar2.png",
+    gender: "Male",
+    contact: "9874563215",
+    previous: "xyz"
   },
   {
     id: 7,
@@ -59,8 +71,10 @@ const patientsList = [
     problem: "BackPain",
     age: "27",
     phone: 9145239755,
-    image: "user.png",
-    gender: "Male"
+    image: "https://www.w3schools.com/w3images/avatar2.png",
+    gender: "Male",
+    contact: "9874563215",
+    previous: "xyz"
   },
   {
     id: 8,
@@ -68,8 +82,10 @@ const patientsList = [
     problem: "Fever",
     age: "38",
     phone: 9789625615,
-    image: "user.png",
-    gender: "Male"
+    image: "https://www.w3schools.com/w3images/avatar2.png",
+    gender: "Male",
+    contact: "9874563215",
+    previous: "xyz"
   },
   {
     id: 9,
@@ -77,8 +93,10 @@ const patientsList = [
     problem: "Fever",
     age: "51",
     phone: 9654789125,
-    image: "user.png",
-    gender: "Male"
+    image: "https://www.w3schools.com/w3images/avatar2.png",
+    gender: "Male",
+    contact: "9874563215",
+    previous: "xyz"
   }
 ];
 

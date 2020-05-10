@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PendingAppointment from "./pendingAppointment.component";
 import HistoryDoctor from "./historyDoctor.component";
+import Pdetail from "./pdetail.component";
 import Setting from "./setting.component";
 import { Link } from "react-router-dom";
 
@@ -70,7 +71,9 @@ class Doctor extends Component {
                   <Setting />
                 )}
               </div>
-              <div className="right2">PAtients info</div>
+              <div className="right2">
+                <Pdetail />
+              </div>
             </div>
           </div>
         </div>
