@@ -88,6 +88,50 @@ const patientsList = [
     previous: "xyz"
   },
   {
+    id: 7,
+    name: "Amit",
+    problem: "BackPain",
+    age: "27",
+    phone: 9145239755,
+    image: "https://www.w3schools.com/w3images/avatar2.png",
+    gender: "Male",
+    contact: "9874563215",
+    previous: "xyz"
+  },
+  {
+    id: 8,
+    name: "Suraj",
+    problem: "Fever",
+    age: "38",
+    phone: 9789625615,
+    image: "https://www.w3schools.com/w3images/avatar2.png",
+    gender: "Male",
+    contact: "9874563215",
+    previous: "xyz"
+  },
+  {
+    id: 7,
+    name: "Amit",
+    problem: "BackPain",
+    age: "27",
+    phone: 9145239755,
+    image: "https://www.w3schools.com/w3images/avatar2.png",
+    gender: "Male",
+    contact: "9874563215",
+    previous: "xyz"
+  },
+  {
+    id: 8,
+    name: "Suraj",
+    problem: "Fever",
+    age: "38",
+    phone: 9789625615,
+    image: "https://www.w3schools.com/w3images/avatar2.png",
+    gender: "Male",
+    contact: "9874563215",
+    previous: "xyz"
+  },
+  {
     id: 9,
     name: "vivek",
     problem: "Fever",
