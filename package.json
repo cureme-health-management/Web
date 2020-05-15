@@ -15,6 +15,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://147.139.7.203:7000/cureme/",
   "eslintConfig": {
     "extends": "react-app"
   },

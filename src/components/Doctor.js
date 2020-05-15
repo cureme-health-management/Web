@@ -3,14 +3,10 @@ import PendingAppointment from "./PendingAppointments";
 import HistoryDoctor from "./DoctorHistory";
 import Pdetail from "./PatientDetails";
 import Setting from "./Settings";
-import { Link } from "react-router-dom";
 
 class Doctor extends Component {
   constructor() {
     super();
-    this.state = {
-      show: "1"
-    };
   }
 
 

@@ -24,16 +24,7 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* body {
-  background: #ffffff !important;
-  min-height: 110vh;
-  font-weight: 400;
-  font-family: "Fira Sans", sans-serif;
-  overflow-y: auto;
-
-}
-
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -43,7 +34,7 @@ label,
 span {
   font-weight: 500;
   font-family: "Fira Sans", sans-serif;
-}
+} */
 
 html,
 .App,
