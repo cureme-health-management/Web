@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 export default function AppNav() {
     return (
         <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light nav-container">
           <div className="container">
             <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul className="navbar-nav">

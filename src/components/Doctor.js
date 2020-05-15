@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import PendingAppointment from "./PendingAppointments";
-import HistoryDoctor from "./DoctorHistory";
 import Pdetail from "./PatientDetails";
-import Setting from "./Settings";
 
 class Doctor extends Component {
   constructor() {
@@ -11,9 +9,9 @@ class Doctor extends Component {
 
   render() {
     return (
-      <div className="container-fluid pt-1" style={{ overflowY: "hidden" }}>
-        <div className="row">
-          <div className="col-md-3" style={{ backgroundColor: " #e9e3e3" }}>
+      <div className="container-fluid doc-container pt-0" style={{ overflowY: "hidden" }}>
+        <div className="row h-100">
+          <div className="col-md-3 list-section" style={{ backgroundColor: " #f4f5f7", height: "100%" }}>
             <PendingAppointment />
           </div>
           <div className="col-md-9">
@@ -23,7 +21,7 @@ class Doctor extends Component {
               </div>
             </div>
             <div className="row h-25">
-              <div className="col" style={{ backgroundColor: " #e9e3e3" }}>
+              <div className="col" style={{ backgroundColor: " #f4f5f7" }}>
                 <Pdetail />
               </div>
             </div>

@@ -42,7 +42,7 @@ class PendingAppointment extends Component {
             </button>
           </div>
         </div>
-        <div className="card">
+        <div className="">
           <ul className="list-group scrollable">{updatedLists}</ul>
         </div>
       </div>

@@ -11,7 +11,7 @@ import Setting from "./components/Settings";
 
 function App() {
   return (
-    <div>
+    <div style={{maxHeight: "100vh"}}>
       <AppNav/>
       <Switch>
         <Route exact path="/" component={Login} />

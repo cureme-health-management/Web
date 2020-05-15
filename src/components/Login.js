@@ -9,6 +9,34 @@ export default class Login extends Component {
       Password: ""
     };
     this.change = this.change.bind(this);
+
+    this.handleSubmit = (e) => {
+      e.preventDefault()
+      let body = {
+        auth: "bearer",
+        userid: this.state.Email,
+        password: this.state.Password
+      }
+
+      let formBody = []
+      for (const property in body) {
+        const encodedKey = encodeURIComponent(property)
+        const encodedValue = encodeURIComponent(body[property])
+        formBody.push(`${encodedKey}=${encodedValue}`)
+      }
+      formBody = formBody.join('&')
+      fetch('/',{
+        method: "POST",
+        mode: "cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: formBody
+      }).then(res=> res.json()).then(data=> {
+        localStorage.setItem('token', data.token)
+        this.props.history.push('/doctor')
+      }).catch(err=> console.log(err))
+    }
   }
 
   change(event) {
@@ -19,14 +47,14 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <div className="auth-wrapper">
             <div className="auth-inner">
               <h3>Sign In</h3>
               <div className="form-group">
                 <label>Email address</label>
                 <input
-                  type="email"
+                  type="text"
                   name="Email"
                   className="form-control"
                   placeholder="Enter email"

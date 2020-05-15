@@ -14,14 +14,30 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-y: auto;
   font-size: 14px !important;
+  height: 100%;
+}
+
+.nav-container {
+  box-shadow: 0 1px 2px 0 #ddd;
+  z-index: 10;
 }
 
 .list-group {
-  max-height: 500px;
+  max-height: calc(100vh - 100px);
   /* margin-bottom: 10px; */
   overflow: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+}
+
+.list-section {
+  border-right: 1px solid #dcdddf;
+  box-shadow: 0.3px 0 1px 0 #ddd;
+  z-index: 0;
+}
+
+.doc-container {
+  height: calc(100vh - 62px);
 }
 
 /* h1,
