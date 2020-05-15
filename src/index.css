@@ -16,11 +16,11 @@ body {
   font-size: 14px !important;
 }
 
-.list-group{
-  max-height: 748px;
+.list-group {
+  max-height: 500px;
   /* margin-bottom: 10px; */
   overflow: hidden;
-  overflow-y:scroll;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 
