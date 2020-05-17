@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import patientsList from "./patientsList";
 
 function Items(props) {
   return (
@@ -22,9 +21,28 @@ class PendingAppointment extends Component {
   constructor() {
     super();
     this.state = {
-      list: patientsList
+      list: []
     };
   }
+
+  componentDidMount(){
+    fetch('/v1.0/appointments',{
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Authorization":`Bearer ${localStorage.token}`
+      }})
+
+      .then(response=> response.json())
+      .then(response => {
+        console.log(response.data)
+        this.setState({
+          list:response.data
+        })
+        
+      })
+      .catch(err=> console.log(err))
+    }
 
   render() {
     const updatedLists = this.state.list.map(item => (

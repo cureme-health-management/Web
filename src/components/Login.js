@@ -86,18 +86,9 @@ export default class Login extends Component {
                   </label>
                 </div>
               </div>
-              {this.state.Email === "harshal@gmail.com" &&
-              this.state.Password === "gore" ? (
-                <Link to={"/doctor"}>
-                  <button type="submit" className="btn btn-primary btn-block">
-                    Submit
-                  </button>
-                </Link>
-              ) : (
                 <button type="submit" className="btn btn-primary btn-block">
                   Submit
                 </button>
-              )}
               <p className="forgot-password text-right">
                 Forgot <a href="#">password?</a>
               </p>
