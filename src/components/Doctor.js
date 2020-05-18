@@ -1,19 +1,39 @@
 import React, { Component } from "react";
-import PendingAppointment from "./PendingAppointments";
 import Pdetail from "./PatientDetails";
+import {Items,PendingAppointment} from "./PendingAppointments"
 
 class Doctor extends Component {
   constructor() {
-    super();
+    super()
+    this.state={
+      list: []
+    }
   }
   
+  componentDidMount(){
+    fetch('/v1.0/appointments',{
+      method: "GET",
+      mode: "cors",
+      headers: {
+        "Authorization":`Bearer ${localStorage.token}`
+      }})
 
-  render() {
+      .then(response=> response.json())
+      .then(response => {
+        this.setState({ list:response.data});
+        })
+      .catch(err=> console.log(err))
+    }
+
+    render() {
+        const updatedLists = this.state.list.map(item => (
+          <Items key={item.id} item={item} />
+        ))
     return (
       <div className="container-fluid doc-container pt-0" style={{ overflowY: "hidden" }}>
         <div className="row h-100">
           <div className="col-md-3 list-section" style={{ backgroundColor: " #f4f5f7", height: "100%" }}>
-            <PendingAppointment />
+            <PendingAppointment updatedLists={updatedLists}/>
           </div>
           <div className="col-md-9">
             <div className="row h-75">
@@ -33,4 +53,4 @@ class Doctor extends Component {
   }
 }
 
-export default Doctor;
+export default Doctor

@@ -1,14 +1,15 @@
 import React, { Component } from "react";
+import Doctor from "./Doctor"
 
-function Items(props) {
+export function Items(prop) {
   return (
     <li class="list-group-item">
       <div class="">
-        <span className="font-weight-bold">{props.item.name}</span>
+        <span className="font-weight-bold">{prop.item.name}</span>
         <br/>
-        {props.item.problem}
+        {prop.item.problem}
         <span class="float-right font-weight-normal" style={{marginTop: '-21px'}}>
-          {props.item.gender} {props.item.age}
+          {prop.item.gender} {prop.item.age}
           <br />
           12:00
         </span>
@@ -18,37 +19,7 @@ function Items(props) {
 }
 
 class PendingAppointment extends Component {
-  constructor() {
-    super();
-    this.state = {
-      list: []
-    };
-  }
-
-  componentDidMount(){
-    fetch('/v1.0/appointments',{
-      method: "GET",
-      mode: "cors",
-      headers: {
-        "Authorization":`Bearer ${localStorage.token}`
-      }})
-
-      .then(response=> response.json())
-      .then(response => {
-        console.log(response.data)
-        this.setState({
-          list:response.data
-        })
-        
-      })
-      .catch(err=> console.log(err))
-    }
-
-  render() {
-    const updatedLists = this.state.list.map(item => (
-      <Items key={item.id} item={item} />
-    ));
-
+  render(){
     return (
       <div className="pt-2">
         <h6 className="">You have following appointments today</h6>
@@ -61,10 +32,11 @@ class PendingAppointment extends Component {
           </div>
         </div>
         <div className="">
-          <ul className="list-group scrollable">{updatedLists}</ul>
+        <ul className="list-group scrollable">{this.props.updatedLists}</ul>
         </div>
       </div>
     );
   }
 }
-export default PendingAppointment;
+
+export {PendingAppointment}
