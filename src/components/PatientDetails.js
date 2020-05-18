@@ -24,7 +24,7 @@ function Items(props) {
   );
 }
 
-class Pdetail extends Component {
+export default class PatientDetails extends Component {
   constructor() {
     super();
     this.state = {
@@ -40,4 +40,3 @@ class Pdetail extends Component {
   }
 }
 
-export default Pdetail;

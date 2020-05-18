@@ -1,15 +1,14 @@
-import React, { Component } from "react";
-import Doctor from "./Doctor"
+import React, { Component } from "react"
 
-export function Items(prop) {
+const ListItem = ({ item }) => {
   return (
     <li class="list-group-item">
       <div class="">
-        <span className="font-weight-bold">{prop.item.name}</span>
-        <br/>
-        {prop.item.problem}
-        <span class="float-right font-weight-normal" style={{marginTop: '-21px'}}>
-          {prop.item.gender} {prop.item.age}
+        <span className="font-weight-bold">{item.name}</span>
+        <br />
+        {item.problem}
+        <span class="float-right font-weight-normal" style={{ marginTop: '-21px' }}>
+          {item.gender} {item.age}
           <br />
           12:00
         </span>
@@ -18,8 +17,8 @@ export function Items(prop) {
   );
 }
 
-class PendingAppointment extends Component {
-  render(){
+export default class PendingAppointment extends Component {
+  render() {
     return (
       <div className="pt-2">
         <h6 className="">You have following appointments today</h6>
@@ -32,11 +31,15 @@ class PendingAppointment extends Component {
           </div>
         </div>
         <div className="">
-        <ul className="list-group scrollable">{this.props.updatedLists}</ul>
+          <ul className="list-group scrollable">
+            {this.props.updatedList.map(item => (
+              <ListItem key={item.id} item={item} />
+            ))}
+          </ul>
         </div>
       </div>
     );
   }
 }
 
-export {PendingAppointment}
+export { PendingAppointment }
