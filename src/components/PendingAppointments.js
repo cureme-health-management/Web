@@ -1,13 +1,16 @@
 import React, { Component } from "react"
 
-const ListItem = ({ item }) => {
+const ListItem = ({ item, select, isSelected }) => {
   return (
-    <li class="list-group-item">
-      <div class="">
+    <li
+      className={isSelected ? "list-group-item list-group-item-action active" : "list-group-item list-group-item-action"}
+      onClick={() => select(item)}
+    >
+      <div className="">
         <span className="font-weight-bold">{item.name}</span>
         <br />
         {item.problem}
-        <span class="float-right font-weight-normal" style={{ marginTop: '-21px' }}>
+        <span className="float-right font-weight-normal" style={{ marginTop: '-21px' }}>
           {item.gender} {item.age}
           <br />
           12:00
@@ -18,6 +21,10 @@ const ListItem = ({ item }) => {
 }
 
 export default class PendingAppointment extends Component {
+  selectAppointment = (item) => {
+    this.props.select(item)
+  }
+
   render() {
     return (
       <div className="pt-2">
@@ -33,7 +40,7 @@ export default class PendingAppointment extends Component {
         <div className="">
           <ul className="list-group scrollable">
             {this.props.updatedList.map(item => (
-              <ListItem key={item.id} item={item} />
+              <ListItem key={item.id} item={item} isSelected={this.props.current === item.id ? true : false} select={(item) => this.selectAppointment(item)} />
             ))}
           </ul>
         </div>
@@ -41,5 +48,3 @@ export default class PendingAppointment extends Component {
     );
   }
 }
-
-export { PendingAppointment }
