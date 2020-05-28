@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import PatientDetails from "./PatientDetails";
-import PendingAppointment from "./PendingAppointments"
+import React, { Component } from "react"
+import CurrentAppointmentDetailsView from "./CurrentAppointmentDetailsView"
+import AppointmentsListView from "./AppointmentsListView"
 
-class Doctor extends Component {
+export default class AppointmentsView extends Component {
   constructor() {
     super()
     this.state = {
@@ -31,10 +31,14 @@ class Doctor extends Component {
 
   render() {
     return (
-      <div className="container-fluid doc-container pt-0" style={{ overflowY: "hidden" }}>
+      <div className="container-fluid full-width-container" style={{ overflowY: "hidden" }}>
         <div className="row h-100">
           <div className="col-md-3 list-section" style={{ backgroundColor: " #f4f5f7", height: "100%" }}>
-            <PendingAppointment updatedList={this.state.list} select={this.selectAppointment} current={this.state.currentAppointment.id} />
+            <AppointmentsListView
+              updatedList={this.state.list}
+              select={this.selectAppointment}
+              current={this.state.currentAppointment.id}
+            />
           </div>
           <div className="col-md-9">
             <div className="row h-75">
@@ -44,7 +48,8 @@ class Doctor extends Component {
             </div>
             <div className="row h-25">
               <div className="col" style={{ backgroundColor: " #f4f5f7" }}>
-                <PatientDetails current={this.state.currentAppointment} />
+                <CurrentAppointmentDetailsView
+                  current={this.state.currentAppointment} />
               </div>
             </div>
           </div>
@@ -53,5 +58,3 @@ class Doctor extends Component {
     );
   }
 }
-
-export default Doctor
