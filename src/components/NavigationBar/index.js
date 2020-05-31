@@ -8,22 +8,24 @@ export default function NavigationBar() {
         <div className="container">
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav">
-              <li className="nav-item1">
+              <li className="nav-item navbar-brand">
                 <h2>LOGO</h2>
               </li>
-              <li className="nav-item2">
-                <Link to='/doctor'>APPOINTMENTS</Link>
+            </ul>
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item">
+                <Link className="nav-link" to='/doctor'>Appointments</Link>
               </li>
-              <li className="nav-item3">
-                <Link to='/history'>HISTORY</Link>
+              <li className="nav-item">
+                <Link className="nav-link" to='/history'>History</Link>
               </li>
-              <li className="nav-item4">
-                <Link to='/settings'>SETTING</Link>
+              <li className="nav-item">
+                <Link className="nav-link" to='/settings'>Settings</Link>
               </li>
-              <li className="nav-item5">
-                <Link to="/sign-in">
+              <li className="nav-item ml-5">
+                <Link className="nav-link" to="/sign-in">
                   Logout
-                  </Link>
+                </Link>
               </li>
             </ul>
           </div>
