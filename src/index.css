@@ -37,7 +37,7 @@ body {
 }
 
 .full-width-container {
-  height: calc(100vh - 62px);
+  height: calc(100vh - 72px);
 }
 
 /* h1,
@@ -191,14 +191,14 @@ img {
   margin-left: 20px;
 } */
 
-/* .dp {
+.dp {
   height: 110px;
   width: 100px;
   margin-top: 0px;
   margin-right: 20px;
   margin-bottom: 0px;
   padding-bottom: 0px;
-} */
+}
 
 /* .nav-item2 {
   margin-left: 650px;

@@ -2,7 +2,7 @@ import React from "react";
 
 const  CurrentAppointmentDetailsView = ({current}) => {
   return (
-    <div className="row">
+    <div className="row pt-2">
       <div className="col">
           <h6>Suraj s chavan</h6>
           <h6>Age: {current.age}</h6>

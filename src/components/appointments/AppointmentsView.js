@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import CurrentAppointmentDetailsView from "./CurrentAppointmentDetailsView"
 import AppointmentsListView from "./AppointmentsListView"
+import PrescriptionView from './prescription/PrescriptionView'
 
 export default class AppointmentsView extends Component {
   constructor() {
@@ -43,7 +44,7 @@ export default class AppointmentsView extends Component {
           <div className="col-md-9">
             <div className="row h-75">
               <div className="col">
-                <h3 className="text">Prescription</h3>
+                <PrescriptionView />
               </div>
             </div>
             <div className="row h-25">

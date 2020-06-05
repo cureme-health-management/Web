@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React from "react"
 
 const ListItem = ({ item, select, isSelected }) => {
   return (
@@ -23,40 +23,13 @@ const ListItem = ({ item, select, isSelected }) => {
   );
 }
 
-// export default class PendingAppointment extends Component {
-//   selectAppointment = (item) => {
-//     this.props.select(item)
-//   }
-
-//   render() {
-//     return (
-//       <div className="pt-2">
-//         <h6 className="">You have following appointments today</h6>
-//         <div className="input-group mb-3">
-//           <input type="text" className="form-control" placeholder="Search" />
-//           <div className="input-group-append">
-//             <button className="btn btn-success" type="submit">
-//               Go
-//             </button>
-//           </div>
-//         </div>
-//         <div className="">
-//           <ul className="list-group scrollable">
-
-//           </ul>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
 const AppointmentsListView = (props) => {
   const selectAppointment = (item) => {
     props.select(item)
   }
   return (
     <div className="pt-2">
-      <h6 className="">You have following appointments today</h6>
+      <h5 className="">Today's appointments</h5>
       <div className="input-group mb-3">
         <input type="text" className="form-control" placeholder="Search" />
         <div className="input-group-append">
