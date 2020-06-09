@@ -1,10 +1,12 @@
 import React from "react";
+import HistoryListItem from "./HistoryListItem";
 
 function HistoryView() {
+  const medicines = ['paracetamol', 'abracoir']
   return (
-    <div>
-      <h1 className="text">HISTORY</h1>
-      <br />
+    <div className="container pt-2">
+      <h5 className="text">History</h5>
+        <HistoryListItem id={35494565443} medicines={medicines} />
     </div>
   );
 }
