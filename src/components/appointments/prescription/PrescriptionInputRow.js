@@ -5,21 +5,21 @@ export default class PrescriptionInputRow extends Component {
         return (
             <tr>
                 <th scope="row">{this.props.num}</th>
-                <td>
+                <td className="col-md-auto">
                     <input type="text" placeholder="Medicine" class="form-control form-control-sm" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-sm" />
                 </td>
-                <td>
+                <td className="col-md-auto">
                     <div className="input-group input-group-sm mb-3">
                         <select className="custom-select" id="inputGroupSelect01">
-                            <option selected>Brand...</option>
+                            <option selected>brand</option>
                             <option value="1">Brand 1</option>
                             <option value="2">Brand 2</option>
                             <option value="3">Brand 3</option>
                         </select>
                     </div>
                 </td>
-                <td>
+                <td className="col-md-auto">
                     <input type="text" placeholder="strength" className="form-control form-control-sm" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-sm" />
                 </td>

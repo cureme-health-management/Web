@@ -32,9 +32,9 @@ export default class PrescriptionView extends Component {
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Medicine</th>
+                            <th scope="col"style={{width: "25%"}}>Medicine</th>
                             <th scope="col">Brand</th>
-                            <th scope="col">strength</th>
+                            <th scope="col" >strength</th>
                             <th scope="col">package</th>
                             <th scope="col">dosage</th>
                             <th scope="col">frequency</th>
