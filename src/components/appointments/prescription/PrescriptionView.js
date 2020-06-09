@@ -8,44 +8,48 @@ export default class PrescriptionView extends Component {
             rows: 0
         }
 
-        this.addRow = () => this.setState({rows: this.state.rows + 1})
+        this.addRow = () => this.setState({ rows: this.state.rows + 1 })
     }
 
     render() {
         let inputRows = []
-        if(this.state.rows > 0) {
-            for(let i=0; i < this.state.rows; i++) {
-                const newRow = <div className="row" key={i}> <PrescriptionInputRow num={i}/> </div>
+        if (this.state.rows > 0) {
+            for (let i = 0; i < this.state.rows; i++) {
+                const newRow = <PrescriptionInputRow key={i} num={i} />
                 inputRows.push(newRow)
             }
         }
-        
+
 
         //var index=2
-        //if (index > -1) { 
-            //inputRows.splice(index,1);
-         // }
+        //if (index > -1) {
+        //inputRows.splice(index,1);
+        // }
 
         return (
-            <div className="container-fluid">
-            <div className="row mt-2 mb-2">
-            <div className="col-md-auto font-weight-bold">#</div>
-            <div className="col ml-3 font-weight-bold">Medicine</div>
-            <div className="col font-weight-bold">Brand</div>
-            <div className="col font-weight-bold ">Strength</div>
-            <div className="col font-weight-bold">Package</div>
-            <div className="col font-weight-bold">Dosage</div>
-            <div className="col font-weight-bold">Freq</div>
-            <div className="col font-weight-bold">Time</div>
-            <div className="col font-weight-bold"></div>
-            </div>
-            <div>
-                    {inputRows}
-                </div>
+            <div className="px-2">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Medicine</th>
+                            <th scope="col">Brand</th>
+                            <th scope="col">strength</th>
+                            <th scope="col">package</th>
+                            <th scope="col">dosage</th>
+                            <th scope="col">frequency</th>
+                            <th scope="col">time</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {inputRows}
+                    </tbody>
+                </table>
                 <div className="row">
                     <span className="btn btn-sm btn-secondary bg-default" onClick={this.addRow}>ADD</span>
                 </div>
             </div>
         )
-}
+    }
 }
