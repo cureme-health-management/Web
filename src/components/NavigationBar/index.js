@@ -1,15 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 export default function NavigationBar() {
   return (
     <div>
+      {!localStorage.token && <Redirect from="*" to="/login"/>}
       <nav className="navbar navbar-expand-lg navbar-light bg-light nav-container">
         <div className="container">
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav">
               <li className="nav-item navbar-brand">
-                <h2>LOGO</h2>
+                <h4>LOGO</h4>
               </li>
             </ul>
             <ul className="navbar-nav ml-auto">
@@ -23,7 +24,7 @@ export default function NavigationBar() {
                 <Link className="nav-link" to='/settings'>Settings</Link>
               </li>
               <li className="nav-item ml-5">
-                <Link className="nav-link" to="/sign-in">
+                <Link className="nav-link" to="/login">
                   Logout
                 </Link>
               </li>
