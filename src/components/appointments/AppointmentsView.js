@@ -42,7 +42,7 @@ export default class AppointmentsView extends Component {
             />
           </div>
           <div className="col-md-9">
-            <div className="row h-75">
+            <div className="row" style={{height:"75vh"}}>
               <div className="col">
                 <PrescriptionView />
               </div>
