@@ -10,14 +10,12 @@ const  CurrentAppointmentDetailsView = ({current}) => {
       </div>
       <div className="col">
             <h6>Contact: {current.contact}</h6>
-            <br />
             <h6>Issue: {current.problem}</h6>
-            <br />
             <h6>Previous Issues: {current.previous}</h6>
       </div>
       <div className="col">
-        <div className="p-2 ba bd-highlight float-right">
-          <img className="dp" src={current.image} alt="???" />
+        <div className="ba bd-highlight float-right">
+          <img className="dp" src={current.image} alt="???" style={{height:"80px"}}/>
         </div>
       </div>
       {/* <div className="d-flex ab bd-highlight">
