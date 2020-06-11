@@ -3,7 +3,7 @@ import './profile.css'
 
 function Setting() {
   return (
-    <div className="container-fluid full-width-container bg">
+    <div className="container-fluid full-width-container bg" style={{paddingTop:"10px"}}>
     <div className="container emp-profile">
             <form method="post">
                 <div className="row">

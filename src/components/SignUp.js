@@ -20,10 +20,10 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container-fluid full-width-container bg" style={{paddingTop:"5px"}}>
         <form>
-          <div className="auth-wrapper">
-            <div className="auth-inner">
+          <div className="auth-wrapper" style={{marginTop:"50px"}}>
+            <div className="auth-inner" style={{marginTop:"50px"}}>
               <h3>Sign Up</h3>
 
               <div className="form-group">
@@ -74,7 +74,7 @@ export default class SignUp extends Component {
                 Sign Up
               </button>
               <p className="forgot-password text-right">
-                Already registered <a href="/sign-in">sign in?</a>
+                Already registered <a href="/login">sign in?</a>
               </p>
             </div>
           </div>

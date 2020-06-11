@@ -45,7 +45,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div className="container-fluid full-width-container bg">
+      <div className="container-fluid full-width-container bg" style={{paddingTop:"10px"}}>
         <form onSubmit={this.handleSubmit}>
           <div className="auth-wrapper">
             <div className="auth-inner">
