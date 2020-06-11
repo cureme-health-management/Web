@@ -3,6 +3,7 @@ import './profile.css'
 
 function Setting() {
   return (
+    <div className="container-fluid full-width-container bg">
     <div className="container emp-profile">
             <form method="post">
                 <div className="row">
@@ -144,6 +145,7 @@ function Setting() {
                     </div>
                 </div>
             </form>
+        </div>
         </div>
   );
 }

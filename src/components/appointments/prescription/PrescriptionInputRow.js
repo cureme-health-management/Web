@@ -20,10 +20,16 @@ export default class PrescriptionInputRow extends Component {
                     </div>
                 </td>
                 <td className="col-md-auto">
-                    <input type="text" placeholder="strength" className="form-control form-control-sm" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm" />
+                <div className="input-group input-group-sm mb-3">
+                        <select className="custom-select" id="inputGroupSelect01">
+                            <option selected>125</option>
+                            <option value="1">250</option>
+                            <option value="2">300</option>
+                            <option value="3">500</option>
+                        </select>
+                    </div>
                 </td>
-                <td>
+                <td className="col-md-auto">
                     <div className="input-group input-group-sm mb-3">
                         <select className="custom-select" id="inputGroupSelect01">
                             <option selected>Tablet</option>
@@ -32,7 +38,7 @@ export default class PrescriptionInputRow extends Component {
                         </select>
                     </div>
                 </td>
-                <td>
+                <td className="col-md-auto">
                     <div className="input-group input-group-sm mb-3">
                         <select className="custom-select" id="inputGroupSelect01">
                             <option selected>1</option>
@@ -42,11 +48,11 @@ export default class PrescriptionInputRow extends Component {
                         </select>
                     </div>
                 </td>
-                <td>
+                <td className="col-md-auto">  
                     <input type="text" placeholder="freq" className="form-control form-control-sm" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-sm" />
                 </td>
-                <td>
+                <td className="col-md-auto">
                     <div className="input-group input-group-sm mb-3">
                         <select className="custom-select" id="inputGroupSelect01">
                             <option selected>After Meal</option>
@@ -55,7 +61,7 @@ export default class PrescriptionInputRow extends Component {
                         </select>
                     </div>
                 </td>
-                <td>
+                <td className="col-md-auto">
                     <span className="btn btn-sm btn-danger bg-default" onClick={this.delRow}>Del</span>
                 </td>
             </tr>

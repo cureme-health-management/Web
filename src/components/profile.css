@@ -1,6 +1,8 @@
-body{
+.bg{
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    padding-top: 10px;
 }
+
 .emp-profile{
     padding: 3%;
     margin-top: 3%;
