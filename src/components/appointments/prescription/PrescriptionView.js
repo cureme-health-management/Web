@@ -5,26 +5,28 @@ export default class PrescriptionView extends Component {
     constructor() {
         super()
         this.state = {
-            rows: 0
+            rows: 1,
+            inputRows:[]
         }
 
-        this.addRow = () => this.setState({ rows: this.state.rows + 1 })
+        this.delRow = (id) => {
+            const inputRows = [this.state.inputRows]
+            const filteredArray = inputRows.filter(item => item.id !== id)
+             this.setState({inputRows: filteredArray});
+           }
+
+        this.addRow = () =>{ 
+        this.setState({ rows: this.state.rows + 1 })
+        if (this.state.rows > 0) {
+            for(let i=0 ;i<this.state.rows;i++){
+            const newRow = <PrescriptionInputRow key={i} id={i} delRow={this.delRow}/>
+            this.setState({inputRows: [...this.state.inputRows, newRow]})
+            console.log(this.state.inputRows)
+        }}}
+             
     }
 
     render() {
-        let inputRows = []
-        if (this.state.rows > 0) {
-            for (let i = 0; i < this.state.rows; i++) {
-                const newRow = <PrescriptionInputRow key={i} num={i} />
-                inputRows.push(newRow)
-            }
-        }
-
-
-        //var index=2
-        //if (index > -1) {
-        //inputRows.splice(index,1);
-        // }
 
         return (
             <div className="px-2">
@@ -43,7 +45,7 @@ export default class PrescriptionView extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {inputRows}
+                        {this.state.inputRows}
                     </tbody>
                 </table>
                 <div className="row">

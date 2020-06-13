@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
+import PrescriptionView from './PrescriptionView'
 
 export default class PrescriptionInputRow extends Component {
+    constructor(){
+        super()
+           }
     render() {
         return (
             <tr>
-                <th scope="row">{this.props.num}</th>
+                <th scope="row">{this.props.id}</th>
                 <td className="col-md-auto">
                     <input type="text" placeholder="Medicine" class="form-control form-control-sm" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-sm" />
@@ -62,7 +66,7 @@ export default class PrescriptionInputRow extends Component {
                     </div>
                 </td>
                 <td className="col-md-auto">
-                    <span className="btn btn-sm btn-danger bg-default" onClick={this.delRow}>Del</span>
+                    <span className="btn btn-sm btn-danger bg-default" onClick = {() => this.props.delRow(this.props.id)}>Del</span>
                 </td>
             </tr>
         )

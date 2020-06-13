@@ -90,6 +90,8 @@ export default class Login extends Component {
                 </button>
               <p className="forgot-password text-right">
                 Forgot <a href="#">password?</a>
+                <p className="forgot-password text-right">
+                <a href="/sign-up">Sign-Up</a></p>
               </p>
             </div>
           </div>
