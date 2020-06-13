@@ -12,7 +12,7 @@ export default class PrescriptionView extends Component {
         this.delRow = (id) => {
             const inputRows = this.state.inputRows
             const filteredArray = inputRows.filter(item => item.props.id !== id)
-            this.setState({ inputRows: filteredArray, rows: this.state.rows - 1 });
+            this.setState({ inputRows: filteredArray});
         }
 
         this.addRow = () => {
@@ -34,14 +34,14 @@ export default class PrescriptionView extends Component {
                 <table class="table table-borderless">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col" style={{ width: "25%" }}>Medicine</th>
+                        <th scope="col">Package</th>
+                            <th scope="col" style={{ width: "20%" }}>Medicine</th>
                             <th scope="col">Brand</th>
-                            <th scope="col" >strength</th>
-                            <th scope="col">package</th>
-                            <th scope="col">dosage</th>
-                            <th scope="col">frequency</th>
-                            <th scope="col">time</th>
+                            <th scope="col" >Strength</th>
+                            <th scope="col">Dosage</th>
+                            <th scope="col">Freq</th>
+                            <th scope="col">Time</th>
+                            <th scope="col">Days</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
