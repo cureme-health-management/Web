@@ -6,24 +6,25 @@ export default class PrescriptionView extends Component {
         super()
         this.state = {
             rows: 1,
-            inputRows:[]
+            inputRows: [],
         }
 
         this.delRow = (id) => {
-            const inputRows = [this.state.inputRows]
-            const filteredArray = inputRows.filter(item => item.id !== id)
-             this.setState({inputRows: filteredArray});
-           }
+            const inputRows = this.state.inputRows
+            const filteredArray = inputRows.filter(item => item.props.id !== id)
+            this.setState({ inputRows: filteredArray, rows: this.state.rows - 1 });
+        }
 
-        this.addRow = () =>{ 
-        this.setState({ rows: this.state.rows + 1 })
-        if (this.state.rows > 0) {
-            for(let i=0 ;i<this.state.rows;i++){
-            const newRow = <PrescriptionInputRow key={i} id={i} delRow={this.delRow}/>
-            this.setState({inputRows: [...this.state.inputRows, newRow]})
-            console.log(this.state.inputRows)
-        }}}
-             
+        this.addRow = () => {
+            this.setState({ rows: this.state.rows + 1 })
+            if (this.state.rows > 0) {
+                for (let i = 0; i < this.state.rows; i++) {
+                    const newRow = <PrescriptionInputRow key={i} id={i} delRow={this.delRow} />
+                    this.setState({ inputRows: [...this.state.inputRows, newRow] })
+                }
+            }
+        }
+
     }
 
     render() {
@@ -34,7 +35,7 @@ export default class PrescriptionView extends Component {
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col"style={{width: "25%"}}>Medicine</th>
+                            <th scope="col" style={{ width: "25%" }}>Medicine</th>
                             <th scope="col">Brand</th>
                             <th scope="col" >strength</th>
                             <th scope="col">package</th>
