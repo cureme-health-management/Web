@@ -2,12 +2,15 @@ import React, { Component } from 'react'
 import PrescriptionInputRow from './PrescriptionInputRow'
 import withSwr from '../../../hoc/swr'
 
+import data from '../../../medicines'
+
 class PrescriptionView extends Component {
     constructor() {
         super()
         this.state = {
             rows: 1,
             inputRows: [],
+            // data: JSON.parse(data)
         }
 
         this.delRow = (id) => {
@@ -29,7 +32,6 @@ class PrescriptionView extends Component {
     }
 
     render() {
-        console.log(this.props.data)
         return (
             <div className="px-2">
                 <table class="table table-borderless">
