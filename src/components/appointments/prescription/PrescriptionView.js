@@ -11,6 +11,10 @@ class PrescriptionView extends Component {
             rows: 1,
             inputRows: [],
             // data: JSON.parse(data)
+            rowsData: [
+                {name: 'Archi', surname: 'bhoir'},
+                {name: 'archies', surname: 'something'}
+            ]
         }
 
         this.delRow = (id) => {
@@ -23,18 +27,24 @@ class PrescriptionView extends Component {
             this.setState({ rows: this.state.rows + 1 })
             if (this.state.rows > 0) {
                 for (let i = 0; i < this.state.rows; i++) {
-                    const newRow = <PrescriptionInputRow key={i} id={i} delRow={this.delRow} />
+                    const newRow = <PrescriptionInputRow key={i} id={i} delRow={this.delRow} handleInput={this.handleRowChange} />
                     this.setState({ inputRows: [...this.state.inputRows, newRow] })
                 }
             }
         }
 
+        this.handleRowChange = (object) => {
+            this.setState({rowsData: [...this.state.data2, object]})
+        }
+    }
+
+    componentDidMount = () => {
     }
 
     render() {
         return (
             <div className="px-2">
-                <table class="table table-borderless">
+                <table className="table table-borderless">
                     <thead>
                         <tr>
                         <th scope="col">Package</th>
