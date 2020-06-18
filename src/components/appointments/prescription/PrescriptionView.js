@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import PrescriptionInputRow from './PrescriptionInputRow'
+import withSwr from '../../../hoc/swr'
 
-export default class PrescriptionView extends Component {
+class PrescriptionView extends Component {
     constructor() {
         super()
         this.state = {
@@ -28,7 +29,7 @@ export default class PrescriptionView extends Component {
     }
 
     render() {
-
+        console.log(this.props.data)
         return (
             <div className="px-2">
                 <table class="table table-borderless">
@@ -56,3 +57,5 @@ export default class PrescriptionView extends Component {
         )
     }
 }
+
+export default withSwr(PrescriptionView)
