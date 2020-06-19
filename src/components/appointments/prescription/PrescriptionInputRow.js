@@ -6,7 +6,13 @@ export default class PrescriptionInputRow extends Component {
         super()
         this.state = {
             medicine: '',
-            package: "0"
+            package: "",
+            brand: "",
+            days: "",
+            time: "",
+            frequency: "",
+            dosage: "",
+            strength: ""
         }
         this.handleChange = (e) => {
             this.setState({[e.target.name]: e.target.value},()=>{
@@ -14,6 +20,12 @@ export default class PrescriptionInputRow extends Component {
                     id: this.props.id,
                     medicine: this.state.medicine,
                     package: this.state.package,
+                    brand: this.state.brand,
+                    strength: this.state.strength,
+                    dosage: this.state.dosage,
+                    frequency: this.state.frequency,
+                    time: this.state.time,
+                    days: this.state.days,
                 }
                 this.props.handleInput(obj)
             })
@@ -28,9 +40,9 @@ export default class PrescriptionInputRow extends Component {
                     <div className="input-group input-group-sm mb-3">
                         <select className="custom-select"value={this.state.package}
                             onChange={this.handleChange} id="inputGroupSelect01" name="package">
-                            <option value="0">Tablet</option>
-                            <option value="1">Syrup</option>
-                            <option value="2">Injection</option>
+                            <option value="Tablet">Tablet</option>
+                            <option value="Syrup">Syrup</option>
+                            <option value="Injection">Injection</option>
                         </select>
                     </div>
                 </td>
@@ -47,7 +59,8 @@ export default class PrescriptionInputRow extends Component {
                 </td>
                 <td className="col-md-auto">
                     <div className="input-group input-group-sm mb-3">
-                        <select className="custom-select" id="inputGroupSelect01" name="brand">
+                        <select className="custom-select" value={this.state.brand} 
+                        onChange={this.handleChange}id="inputGroupSelect01" name="brand">
                             <option value="0">brand</option>
                             <option value="1">Brand 1</option>
                             <option value="2">Brand 2</option>
@@ -57,37 +70,41 @@ export default class PrescriptionInputRow extends Component {
                 </td>
                 <td className="col-md-auto">
                     <div className="input-group input-group-sm mb-3">
-                        <select className="custom-select" id="inputGroupSelect01" name="strength">
-                            <option value="0">125</option>
-                            <option value="1">250</option>
-                            <option value="2">300</option>
-                            <option value="3">500</option>
+                        <select className="custom-select" value={this.state.strength}
+                    onChange={this.handleChange} id="inputGroupSelect01" name="strength">
+                            <option value="125">125</option>
+                            <option value="250">250</option>
+                            <option value="300">300</option>
+                            <option value="500">500</option>
                         </select>
                     </div>
                 </td>
                 <td className="col-md-auto">
                     <div className="input-group input-group-sm mb-3">
-                        <select className="custom-select" id="inputGroupSelect01" name="dosage">
-                            <option value="0">1</option>
-                            <option value="1">2</option>
-                            <option value="2">3</option>
-                            <option value="3">4</option>
+                        <select className="custom-select" value={this.state.dosage}
+                    onChange={this.handleChange} id="inputGroupSelect01" name="dosage">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                         </select>
                     </div>
                 </td>
                 <td className="col-md-auto">
                     <div className="input-group input-group-sm mb-3">
-                        <select className="custom-select" id="inputGroupSelect01" name="frequency">
-                            <option  value="0">1</option>
-                            <option value="1">2</option>
-                            <option value="2">3</option>
-                            <option value="3">4</option>
+                        <select className="custom-select" value={this.state.frequency}
+                    onChange={this.handleChange} id="inputGroupSelect01" name="frequency">
+                            <option  value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                         </select>
                     </div>
                 </td>
                 <td className="col-md-auto">
                     <div className="input-group input-group-sm mb-3">
-                        <select className="custom-select" id="inputGroupSelect01" name="time">
+                        <select className="custom-select" value={this.state.time}
+                    onChange={this.handleChange} id="inputGroupSelect01" name="time">
                             <option  value="0">After Meal</option>
                             <option value="1">Before Meal</option>
                             <option value="2">Morning</option>
@@ -96,11 +113,12 @@ export default class PrescriptionInputRow extends Component {
                 </td>
                 <td className="col-md-auto">
                     <div className="input-group input-group-sm mb-3">
-                        <select className="custom-select" id="inputGroupSelect01" name="days">
-                            <option  value="0">1</option>
-                            <option value="1">2</option>
-                            <option value="2">3</option>
-                            <option value="3">4</option>
+                        <select className="custom-select" value={this.state.days}
+                    onChange={this.handleChange} id="inputGroupSelect01" name="days">
+                            <option  value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                         </select>
                     </div>
                 </td>

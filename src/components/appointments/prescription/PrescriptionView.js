@@ -11,10 +11,7 @@ class PrescriptionView extends Component {
             rows: 1,
             inputRows: [],
             // data: JSON.parse(data)
-            rowsData: [
-                {name: 'Archi', surname: 'bhoir'},
-                {name: 'archies', surname: 'something'}
-            ]
+            rowsData: []
         }
 
         this.delRow = (id) => {
@@ -34,7 +31,7 @@ class PrescriptionView extends Component {
         }
 
         this.handleRowChange = (object) => {
-            this.setState({rowsData: [...this.state.data2, object]})
+            this.setState({rowsData: [...this.state.rowsData, object]})
         }
     }
 
@@ -42,6 +39,7 @@ class PrescriptionView extends Component {
     }
 
     render() {
+        console.log(this.state.rowsData)
         return (
             <div className="px-2">
                 <table className="table table-borderless">
@@ -63,7 +61,10 @@ class PrescriptionView extends Component {
                     </tbody>
                 </table>
                 <div className="row">
-                    <span className="btn btn-sm btn-secondary bg-default" onClick={this.addRow}>ADD</span>
+                    <span className="btn btn-sm btn-secondary bg-default" onClick={this.addRow} style={{marginLeft:"28px"}}>ADD</span>
+                </div>
+                <div className="row">
+                <button type="button" class="btn btn-primary" style={{marginLeft:"400px",position:"absolute" ,top:"88%"}}>SUBMIT</button>
                 </div>
             </div>
         )
