@@ -11,7 +11,7 @@ class PrescriptionView extends Component {
             rows: 1,
             inputRows: [],
             // data: JSON.parse(data)
-            rowsData: []
+            rowsData: [],
         }
 
         this.delRow = (id) => {
@@ -35,8 +35,16 @@ class PrescriptionView extends Component {
         }
     }
 
-    componentDidMount = () => {
+    handleOnSubmit = (e) =>{
+        alert("Mail Sent")
+        this.setState({rowsData:[],inputRows:[]})
+        e.preventDefault() }
+
+    componentWillUnMount = () => {
+        if(this.state.rowsData!=[]){
+            alert("Data not saved")
     }
+}
 
     render() {
         return (
