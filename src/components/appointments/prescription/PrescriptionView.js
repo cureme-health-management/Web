@@ -39,9 +39,8 @@ class PrescriptionView extends Component {
     }
 
     render() {
-        console.log(this.state.rowsData)
         return (
-            <div className="px-2">
+            <div className="px-2 h-100">
                 <table className="table table-borderless">
                     <thead>
                         <tr>
@@ -64,7 +63,7 @@ class PrescriptionView extends Component {
                     <span className="btn btn-sm btn-secondary bg-default" onClick={this.addRow} style={{marginLeft:"28px"}}>ADD</span>
                 </div>
                 <div className="row">
-                <button type="button" class="btn btn-primary" style={{marginLeft:"400px",position:"absolute" ,top:"88%"}}>SUBMIT</button>
+                    <button type="button" className="btn btn-success position-absolute" style={{bottom: '10px', right: '10px'}}>Submit</button>
                 </div>
             </div>
         )
