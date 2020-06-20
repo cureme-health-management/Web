@@ -10,7 +10,13 @@ export default class AppointmentsView extends Component {
       currentAppointment: {}
     }
 
-    this.selectAppointment = (appt) => this.setState({ currentAppointment: appt })
+    this.selectAppointment = (appt) => {
+      const prescriptionInLocalStorage = JSON.parse(localStorage.getItem('current'))
+      if(prescriptionInLocalStorage.length !== 0) {
+        //TODO * show a modal saying "There are unsaved changes"
+      }
+      this.setState({ currentAppointment: appt }, ()=> localStorage.removeItem('current'))
+    }
   }
 
   componentDidMount() {

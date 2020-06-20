@@ -19,6 +19,7 @@ class PrescriptionView extends Component {
             const filteredArray = inputRows.filter(item => item.props.id !== id)
             const filteredRowData = rowsData.filter(item => item.id !== id)
             this.setState({ inputRows: filteredArray, rowsData: filteredRowData });
+            localStorage.current = JSON.stringify(filteredRowData)
         }
 
         this.addRow = () => {
@@ -41,6 +42,7 @@ class PrescriptionView extends Component {
                 return obj
             })
             this.setState({ rowsData: newState })
+            localStorage.setItem('current', JSON.stringify(newState))
         }
 
         this.onBeforeUnload = (e) => {
