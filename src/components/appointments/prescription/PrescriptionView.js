@@ -8,43 +8,56 @@ class PrescriptionView extends Component {
     constructor() {
         super()
         this.state = {
-            rows: 1,
+            rows: 0,
             inputRows: [],
             // data: JSON.parse(data)
             rowsData: [],
         }
 
         this.delRow = (id) => {
-            const inputRows = this.state.inputRows
+            const { inputRows, rowsData } = this.state
             const filteredArray = inputRows.filter(item => item.props.id !== id)
-            this.setState({ inputRows: filteredArray});
+            const filteredRowData = rowsData.filter(item => item.id !== id)
+            this.setState({ inputRows: filteredArray, rowsData: filteredRowData });
         }
 
         this.addRow = () => {
-            this.setState({ rows: this.state.rows + 1 })
-            if (this.state.rows > 0) {
+            const { inputRows, rowsData, rows } = this.state
+            this.setState({ rows: rows + 1 }, () => {
                 for (let i = 0; i < this.state.rows; i++) {
                     const newRow = <PrescriptionInputRow key={i} id={i} delRow={this.delRow} handleInput={this.handleRowChange} />
-                    this.setState({ inputRows: [...this.state.inputRows, newRow] })
+                    this.setState({ inputRows: [...inputRows, newRow], rowsData: [...rowsData, { id: i }] })
                 }
-            }
+            })
         }
 
         this.handleRowChange = (object) => {
-            this.setState({rowsData: [...this.state.rowsData, object]})
+            window.addEventListener("beforeunload", this.onBeforeUnload);
+            const { rowsData } = this.state
+            const newState = rowsData.filter(obj => {
+                if (obj.id === object.id) {
+                    return Object.assign(obj, object)
+                }
+                return obj
+            })
+            this.setState({ rowsData: newState })
+        }
+
+        this.onBeforeUnload = (e) => {
+            e.returnValue = 'Are you sure you want to leave this page?'
         }
     }
 
-    handleOnSubmit = (e) =>{
-        alert("Mail Sent")
-        this.setState({rowsData:[],inputRows:[]})
-        e.preventDefault() }
-
-    componentWillUnMount = () => {
-        if(this.state.rowsData!=[]){
-            alert("Data not saved")
+    handleOnSubmit = (e) => {
+        // e.preventDefault()
+        this.setState({ rowsData: [], inputRows: [] })
     }
-}
+
+    componentWillUnmount = () => {
+        if (this.state.rowsData.length === 0) {
+            window.removeEventListener("beforeunload", this.onBeforeUnload);
+        }
+    }
 
     render() {
         return (
@@ -52,7 +65,7 @@ class PrescriptionView extends Component {
                 <table className="table table-borderless">
                     <thead>
                         <tr>
-                        <th scope="col">Package</th>
+                            <th scope="col">Package</th>
                             <th scope="col" style={{ width: "20%" }}>Medicine</th>
                             <th scope="col">Brand</th>
                             <th scope="col" >Strength</th>
@@ -68,10 +81,10 @@ class PrescriptionView extends Component {
                     </tbody>
                 </table>
                 <div className="row">
-                    <span className="btn btn-sm btn-secondary bg-default" onClick={this.addRow} style={{marginLeft:"28px"}}>ADD</span>
+                    <span className="btn btn-sm btn-secondary bg-default" onClick={this.addRow} style={{ marginLeft: "28px" }}>ADD</span>
                 </div>
                 <div className="row">
-                    <button type="button" className="btn btn-success position-absolute" style={{bottom: '10px', right: '10px'}}>Submit</button>
+                    <button type="button" className="btn btn-success position-absolute" style={{ bottom: '10px', right: '10px' }}>Submit</button>
                 </div>
             </div>
         )
