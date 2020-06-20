@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import PrescriptionInputRow from './PrescriptionInputRow'
 import withSwr from '../../../hoc/swr'
 
-import data from '../../../medicines'
+// import data from '../../../medicines'
 
 class PrescriptionView extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             rows: 0,
+            appointmentId: this.props.id,
             inputRows: [],
             // data: JSON.parse(data)
             rowsData: [],
@@ -59,6 +60,9 @@ class PrescriptionView extends Component {
         if (this.state.rowsData.length === 0) {
             window.removeEventListener("beforeunload", this.onBeforeUnload);
         }
+    }
+    componentDidMount = () => {
+        this.setState({ appointmentId: this.props.id })
     }
 
     render() {

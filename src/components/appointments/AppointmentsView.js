@@ -20,6 +20,7 @@ export default class AppointmentsView extends Component {
   }
 
   componentDidMount() {
+    this.setState({loading: true})
     fetch('/v1.0/appointments', {
       method: "GET",
       mode: "cors",
@@ -29,14 +30,19 @@ export default class AppointmentsView extends Component {
     })
       .then(response => response.json())
       .then(response => {
-        this.setState({ list: response.data, currentAppointment: response.data[0] });
+        this.setState({ list: response.data, currentAppointment: response.data[0], loading: false });
       })
-      .catch(err => console.log(err))
+    .catch(err => {
+      this.setState({loading: false})
+      console.log(err)
+    })
   }
 
 
   render() {
-    return (
+    return this.state.loading ? <div>Loading...</div>
+    :
+     (
       <div className="container-fluid full-width-container" style={{ overflowY: "hidden" }}>
         <div className="row h-100">
           <div className="col-md-3 list-section" style={{ backgroundColor: " #f4f5f7", height: "100%" }}>
