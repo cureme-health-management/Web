@@ -11,7 +11,7 @@ class PrescriptionView extends Component {
             rows: 1,
             inputRows: [],
             // data: JSON.parse(data)
-            rowsData: []
+            rowsData: [],
         }
 
         this.delRow = (id) => {
@@ -35,11 +35,20 @@ class PrescriptionView extends Component {
         }
     }
 
-    componentDidMount = () => {
+    handleOnSubmit = (e) =>{
+        alert("Mail Sent")
+        this.setState({rowsData:[],inputRows:[]})
+        e.preventDefault() }
+
+    componentWillUnMount = () => {
+        if(this.state.rowsData!=[]){
+            alert("Data not saved")
     }
+}
 
     render() {
         console.log(this.state.rowsData)
+        
         return (
             <div className="px-2">
                 <table className="table table-borderless">
@@ -64,7 +73,7 @@ class PrescriptionView extends Component {
                     <span className="btn btn-sm btn-secondary bg-default" onClick={this.addRow} style={{marginLeft:"28px"}}>ADD</span>
                 </div>
                 <div className="row">
-                <button type="button" class="btn btn-primary" style={{marginLeft:"400px",position:"absolute" ,top:"88%"}}>SUBMIT</button>
+                <button type="button" class="btn btn-primary" onClick={this.handleOnSubmit} style={{marginLeft:"400px",position:"absolute" ,top:"88%"}}>SUBMIT</button>
                 </div>
             </div>
         )
