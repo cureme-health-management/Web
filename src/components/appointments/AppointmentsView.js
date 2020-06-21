@@ -42,6 +42,7 @@ export default class AppointmentsView extends Component {
   render() {
     return this.state.loading ? <div>Loading...</div>
     :
+    this.state.list.length > 0 ?
      (
       <div className="container-fluid full-width-container" style={{ overflowY: "hidden" }}>
         <div className="row h-100">
@@ -67,6 +68,10 @@ export default class AppointmentsView extends Component {
           </div>
         </div>
       </div>
-    );
+    )
+    :
+    <div className="container">
+      <h5>No Appointments today</h5>
+    </div>
   }
 }
