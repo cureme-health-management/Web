@@ -46,8 +46,8 @@ class PrescriptionView extends Component {
             localStorage.setItem('current', JSON.stringify(newState))
         }
 
-        this.onBeforeUnload = (e) => {
-            e.returnValue = 'Are you sure you want to leave this page?'
+       this.onBeforeUnload = (e) => {
+           e.returnValue = 'Are you sure you want to leave this page?'
         }
     }
 
@@ -61,9 +61,22 @@ class PrescriptionView extends Component {
             window.removeEventListener("beforeunload", this.onBeforeUnload);
         }
     }
-    componentDidMount = () => {
-        this.setState({ appointmentId: this.props.id })
+
+    componentWillReceiveProps(nextId){
+        if(this.props.id !== nextId.id){
+            if(this.state.rowsData.length === 0){
+            this.setState({ appointmentId: nextId.id})
+            }
+            else{
+                alert("DAta not Submitted")
+                this.handleOnSubmit()
+            }
+        }
+        else {
+             this.setState({appointmentId:nextId.id})
+        }
     }
+
 
     render() {
         return (
