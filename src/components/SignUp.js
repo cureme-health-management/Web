@@ -54,7 +54,7 @@ export default class SignUp extends Component {
                   type="email"
                   name="Email"
                   className="form-control"
-                  placeholder="Enter email"
+                  placeholder="email"
                   onChange={this.change}
                 />
               </div>
@@ -65,7 +65,7 @@ export default class SignUp extends Component {
                   type="password"
                   name="Password"
                   className="form-control"
-                  placeholder="Enter password"
+                  placeholder="password"
                   onChange={this.change}
                 />
               </div>
@@ -74,7 +74,7 @@ export default class SignUp extends Component {
                 Sign Up
               </button>
               <p className="forgot-password text-right">
-                Already registered <a href="/login">sign in?</a>
+                Already registered <Link to='login'>sign in</Link>
               </p>
             </div>
           </div>

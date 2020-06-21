@@ -1,8 +1,16 @@
 import React, { Component } from 'react'
 import PrescriptionInputRow from './PrescriptionInputRow'
 import withSwr from '../../../hoc/swr'
+import styled from 'styled-components'
 
 // import data from '../../../medicines'
+
+
+const ScrollableTableBody = styled.tbody`
+    max-height: 60vh;
+    display: block;
+    overflow-y: scroll;
+`
 
 class PrescriptionView extends Component {
     constructor(props) {
@@ -95,9 +103,9 @@ class PrescriptionView extends Component {
                             <th scope="col"></th>
                         </tr>
                     </thead>
-                    <tbody style={{maxHeight:'40vh',display:'block',overflowY:'scroll'}}>
+                    <ScrollableTableBody>
                         {this.state.inputRows}
-                    </tbody>
+                    </ScrollableTableBody>
                 </table>
                 <div className="row">
                     <span className="btn btn-sm btn-secondary bg-default" onClick={this.addRow} style={{ marginLeft: "28px" }}>ADD</span>

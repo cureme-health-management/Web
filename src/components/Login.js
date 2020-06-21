@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class Login extends Component {
   constructor() {
@@ -51,12 +52,12 @@ export default class Login extends Component {
             <div className="auth-inner">
               <h3>Sign In</h3>
               <div className="form-group">
-                <label>Email address</label>
+                <label>Email</label>
                 <input
                   type="text"
                   name="Email"
                   className="form-control"
-                  placeholder="Enter email"
+                  placeholder="email"
                   onChange={this.change}
                 />
               </div>
@@ -66,7 +67,7 @@ export default class Login extends Component {
                   type="password"
                   name="Password"
                   className="form-control"
-                  placeholder="Enter password"
+                  placeholder="password"
                   onChange={this.change}
                 />
               </div>
@@ -91,7 +92,8 @@ export default class Login extends Component {
               <p className="forgot-password text-right">
                 Forgot <a href="#">password?</a>
                 <p className="forgot-password text-right">
-                <a href="/sign-up">Sign-Up</a></p>
+                  <Link to='sign-up'>sign up</Link>
+                </p>
               </p>
             </div>
           </div>
