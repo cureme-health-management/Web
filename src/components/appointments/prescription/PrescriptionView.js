@@ -77,10 +77,10 @@ class PrescriptionView extends Component {
         }
     }
 
-
     render() {
         return (
             <div className="px-2 h-100">
+
                 <table className="table table-borderless">
                     <thead>
                         <tr>
@@ -95,7 +95,7 @@ class PrescriptionView extends Component {
                             <th scope="col"></th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody style={{maxHeight:'40vh',display:'block',overflowY:'scroll'}}>
                         {this.state.inputRows}
                     </tbody>
                 </table>

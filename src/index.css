@@ -30,6 +30,10 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+thead, tbody tr {
+  display:table;
+  width:100%;}
+  
 .list-section {
   border-right: 1px solid #dcdddf;
   box-shadow: 0.3px 0 1px 0 #ddd;
