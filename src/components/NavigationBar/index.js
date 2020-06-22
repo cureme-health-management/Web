@@ -10,7 +10,9 @@ export default function NavigationBar() {
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav">
               <li className="nav-item navbar-brand">
-                <h4>LOGO</h4>
+                <Link to='/'>
+                  <h5>LOGO</h5>
+                </Link>
               </li>
             </ul>
             <ul className="navbar-nav ml-auto">
