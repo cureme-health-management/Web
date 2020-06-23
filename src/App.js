@@ -10,6 +10,7 @@ import AppointmentsView from "./components/appointments/AppointmentsView";
 import NavigationBar from "./components/NavigationBar";
 import HistoryView from "./components/history/HistoryView";
 import Setting from "./components/Settings";
+import AppointmentProvider from './providers/AppointmentProvider'
 
 const fetcher = url => fetch(url).then(res => res.json())
 
@@ -29,7 +30,9 @@ function App() {
             <Route exact path="/" component={DashBoard} />
             <Route path="/login" component={Login} />
             <Route path="/sign-up" component={SignUp} />
-            <Route path="/doctor" component={AppointmentsView} />
+            <Route path="/doctor" render={(props) => <AppointmentProvider>
+              <AppointmentsView {...props} />
+            </AppointmentProvider>} />
             <Route path="/history" component={HistoryView} />
             <Route path="/settings" component={Setting} />
           </Switch>

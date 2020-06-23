@@ -1,36 +1,41 @@
 import React from "react"
 import { AppointmentConsumer } from '../../providers/AppointmentProvider'
 
-const ListItem = ({ item, select, isSelected }) => {
+const ListItem = ({ item }) => {
   return (
-    <li
-      className={isSelected ?
-        "list-group-item list-group-item-action active"
-        :
-        "list-group-item list-group-item-action"}
-      onClick={() => select(item)}
-    >
-      <div className="">
-        <span className="font-weight-bold">{item.name}</span>
-        <br />
-        {item.problem}
-        <span className="float-right font-weight-normal" style={{ marginTop: '-21px' }}>
-          {item.gender} {item.age}
-          <br />
-          12:00
-        </span>
-      </div>
-    </li>
+    <AppointmentConsumer>
+      {({ data, select }) => {
+        let isSelected = data.currentAppointment.id === item.id ? true : false
+        return (
+          <li
+            className={isSelected ?
+              "list-group-item list-group-item-action active"
+              :
+              "list-group-item list-group-item-action"}
+            onClick={() => select(item)}
+          >
+            <div className="">
+              <span className="font-weight-bold">{item.firstName} {item.lastName}</span>
+              <br />
+              {item.problem}
+              <span className="float-right font-weight-normal" style={{ marginTop: '-23px' }}>
+                {item.gender}
+                <br />
+                <strong>{item.age}</strong>
+              </span>
+            </div>
+          </li>
+        )
+      }}
+    </AppointmentConsumer>
+
   );
 }
 
 const AppointmentsListView = (props) => {
-  const selectAppointment = (item) => {
-    props.select(item)
-  }
   return (
     <AppointmentConsumer>
-      {({ message }) => {
+      {({ data }) => {
         return (
           <div className="pt-2">
             <h5 className="">Today's appointments</h5>
@@ -48,10 +53,6 @@ const AppointmentsListView = (props) => {
                   <ListItem
                     key={item.id}
                     item={item}
-                    isSelected={
-                      props.current === item.id ? true : false
-                    }
-                    select={(item) => selectAppointment(item)}
                   />
                 ))}
               </ul>
