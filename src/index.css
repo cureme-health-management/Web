@@ -61,6 +61,7 @@ html,
 
 .auth-inner {
   width: 450px;
+  min-height: 450px;
   margin-top: 100px;
   margin-bottom: auto;
   margin-left: auto;
@@ -89,7 +90,7 @@ html,
   box-shadow: none;
 }
 
-.auth-wrapper h3 {
+.auth-wrapper h4 ,h3{
   text-align: center;
   margin: 0;
   line-height: 1;
