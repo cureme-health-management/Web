@@ -15,7 +15,9 @@ export default class SignUp extends Component {
       clinicName:"",
       clinicId:"",
       clinicContact:"",
-      clinicAddress:""
+      clinicAddress:"",
+      specialization:"",
+      doctorAddress:""
     };
     this.handleChange = this.handleChange.bind(this);
     this.next = this.next.bind(this)
@@ -89,12 +91,14 @@ get nextButton(){
           firstName={this.state.firstName}
           lastName={this.state.lastName}
           degree={this.state.degree}
+          specialization={this.state.specialization}
         />
         <Step2 
           currentStep={this.state.currentStep} 
           handleChange={this.handleChange}
           email={this.state.email}
           phoneNum={this.state.phoneNum}
+          doctorAddress={this.state.doctorAddress}
           password={this.state.password}
         />
         <Step3 
@@ -103,7 +107,7 @@ get nextButton(){
           clinicName={this.state.clinicName}
           clinicId={this.state.clinicId}
           clinicContact={this.state.clinicContact}
-          clinicAdress={this.state.clinicAddress}
+          clinicAddress={this.state.clinicAddress}
         />
               {(this.state.currentStep==1)?(<button className="btn btn-secondary" 
               style={{visibility:"hidden"}}>hidden</button>):
@@ -160,6 +164,16 @@ function Step1(props) {
     onChange={props.handleChange}
     />
 </div>
+<div className="form-group">
+  <label>Specialization</label>
+  <input
+    className="form-control"
+    name="specialization"
+    type="text"
+    value={props.specialization}
+    onChange={props.handleChange}
+    />
+</div>
 </div>
   );
 }
@@ -171,7 +185,15 @@ function Step2(props) {
   return(
     <div>
     <div className="form-group">
-              </div>
+     <label>Doctor Address</label>
+     <input
+      className="form-control"
+      name="doctorAddress"
+      type="text"
+      value={props.doctorAddress}
+      onChange={props.handleChange}
+      />
+    </div>
               <div className="form-group">
               <label>Email address</label>
               <input
@@ -219,7 +241,7 @@ function Step3(props) {
       <label>Clinic Name</label>
       <input
         className="form-control"
-        name="ClinicName"
+        name="clinicName"
         type="text"
         placeholder="Enter Clinic Name"
         value={props.clinicName}
@@ -230,7 +252,7 @@ function Step3(props) {
       <label>Clinic Id</label>
       <input
         className="form-control"
-        name="ClinicId"
+        name="clinicId"
         type="text"
         placeholder="Enter Clinic Id"
         value={props.clinicId}
