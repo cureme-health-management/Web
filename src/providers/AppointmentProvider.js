@@ -31,13 +31,14 @@ export default class AppointmentProvider extends Component {
         this.setState({ loading: true })
         fetch('/v1.0/appointments', {
             method: "GET",
-            mode: "cors",
+            // mode: "cors",
             headers: {
                 "Authorization": `Bearer ${localStorage.token}`
             }
         })
             .then(response => response.json())
             .then(response => {
+                console.log(response)
                 if (response.appointments.length > 0) {
                     let temp = []
                     response.appointments.map(a => {

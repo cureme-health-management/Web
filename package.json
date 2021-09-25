@@ -35,5 +35,8 @@
     ]
   },
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "miragejs": "^0.1.42"
+  }
 }

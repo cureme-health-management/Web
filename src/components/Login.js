@@ -25,15 +25,19 @@ export default class Login extends Component {
         formBody.push(`${encodedKey}=${encodedValue}`)
       }
       formBody = formBody.join('&')
-      fetch('/',{
-        method: "POST",
-        mode: "cors",
+
+      // return this.props.history.push('/')
+
+      fetch('/api/users',{
+        method: "GET",
+        // mode: "cors",
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded"
+          // "Content-Type": "application/x-www-form-urlencoded"
         },
-        body: formBody
+        // body: formBody
       }).then(res=> res.json()).then(data=> {
-        localStorage.setItem('token', data.token)
+        // localStorage.setItem('token', data.token)
+        console.log(data)
         this.props.history.push('/doctor')
       }).catch(err=> console.log(err))
     }
