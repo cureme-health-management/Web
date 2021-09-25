@@ -6,7 +6,7 @@ export default function NavigationBar() {
     <div>
       {!localStorage.token && <Redirect from="*" to="/login"/>}
       <nav className="navbar navbar-expand-lg navbar-light bg-light nav-container">
-        <div className="container">
+        <div className="container-fluid">
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav">
               <li className="nav-item navbar-brand">
