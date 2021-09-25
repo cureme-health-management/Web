@@ -37,6 +37,9 @@
   "keywords": [],
   "description": "",
   "devDependencies": {
-    "miragejs": "^0.1.42"
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.26.0",
+    "miragejs": "^0.1.42",
+    "prettier": "^2.4.1"
   }
 }
