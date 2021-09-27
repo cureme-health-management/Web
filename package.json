@@ -1,46 +1,51 @@
 {
-  "name": "updated",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "bootstrap": "^4.4.1",
-    "eslint-config-prettier": "^8.3.0",
-    "react": "^16.13.1",
-    "react-autocomplete": "^1.8.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.1",
-    "styled-components": "^5.1.1",
-    "swr": "^0.2.3"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "proxy": "http://147.139.7.203:7000/cureme/",
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "keywords": [],
-  "description": "",
-  "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-plugin-react": "^7.26.0",
-    "miragejs": "^0.1.42",
-    "prettier": "^2.4.1"
-  }
+    "name": "updated",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "bootstrap": "^4.4.1",
+        "react": "^16.13.1",
+        "react-autocomplete": "^1.8.1",
+        "react-dom": "^16.13.1",
+        "react-router-dom": "^5.1.2",
+        "react-scripts": "3.4.1",
+        "styled-components": "^5.1.1",
+        "swr": "^0.2.3"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "prepare": "husky install"
+    },
+    "proxy": "http://147.139.7.203:7000/cureme/",
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "keywords": [],
+    "description": "",
+    "devDependencies": {
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-react": "^7.26.0",
+        "husky": "^7.0.2",
+        "lint-staged": "^11.1.2",
+        "miragejs": "^0.1.42",
+        "prettier": "^2.4.1"
+    },
+    "lint-staged": {
+        "*.{js,css,md}": "prettier --write"
+    }
 }
