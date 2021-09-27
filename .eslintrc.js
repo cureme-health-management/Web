@@ -19,5 +19,6 @@ module.exports = {
         semi: ["error", "never"],
         "no-console": ["error"],
         prettier: 0,
+        "react/prop-types": 0,
     },
 }
