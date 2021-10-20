@@ -1,10 +1,11 @@
 import React from "react"
 import { Link, Redirect } from "react-router-dom"
+import { loggedIn } from "../../utils"
 
 export default function NavigationBar() {
     return (
         <div>
-            {!localStorage.token && <Redirect from="*" to="/login" />}
+            {!loggedIn() && <Redirect from="*" to="/login" />}
             <nav className="navbar navbar-expand-lg navbar-light bg-light nav-container">
                 <div className="container-fluid">
                     <div
