@@ -1,4 +1,5 @@
 import { initializeAppointmets } from "./appointments"
+import { initializeHistory } from "./history"
 
 export default function initializeSeeds(server) {
     server.create("user", {
@@ -7,4 +8,5 @@ export default function initializeSeeds(server) {
         password: "admin",
     })
     initializeAppointmets(server)
+    initializeHistory(server)
 }
