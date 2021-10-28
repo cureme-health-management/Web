@@ -8,6 +8,7 @@ export const createMockServer = ({ environment = "test" }) => {
         models: {
             user: Model,
             appointment: Model,
+            history: Model,
         },
         seeds(server) {
             initializeSeeds(server)

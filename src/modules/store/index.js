@@ -1,5 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit"
+import historyReducer from "../../features/history/historySlice"
 
 export const store = configureStore({
-    reducer: {},
+    reducer: {
+        history: historyReducer,
+    },
 })
