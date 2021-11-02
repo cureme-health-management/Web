@@ -31,6 +31,8 @@ export default historySlice.reducer
 export const { setHistory } = historySlice.actions
 
 export const fetchHistory = () => async (dispatch) => {
-    const { data } = await axios.get("/v1.0/history")
-    dispatch(setHistory(data.histories))
+    const {
+        data: { histories },
+    } = await axios.get("/v1.0/history")
+    dispatch(setHistory(histories))
 }
