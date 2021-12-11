@@ -6,12 +6,6 @@ import { fetchHistory } from "./historySlice"
 function HistoryView() {
     const { history } = useSelector(({ history }) => history)
 
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(fetchHistory())
-    }, [dispatch])
-
     return (
         <div className="container pt-2">
             <h5 className="text">History</h5>

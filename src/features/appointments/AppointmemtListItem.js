@@ -2,14 +2,11 @@ import React from "react"
 
 export const ListItem = ({ item, data, select }) => {
     const isSelected = data.currentAppointment.id === item.id ? true : false
-    console.log(item)
     return (
         <li
-            className={
-                isSelected
-                    ? "list-group-item list-group-item-action active"
-                    : "list-group-item list-group-item-action"
-            }
+            className={`list-group-item list-group-item-action ${
+                isSelected && `active`
+            }`}
             onClick={() => select(item)}
         >
             <div className="">

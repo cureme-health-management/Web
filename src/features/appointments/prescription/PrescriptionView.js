@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import PrescriptionInputRow from "./PrescriptionInputRow"
-import withSwr from "../../../hoc/swr"
 import styled from "styled-components"
 
 // import data from '../../../medicines'
@@ -143,4 +142,4 @@ class PrescriptionView extends Component {
     }
 }
 
-export default withSwr(PrescriptionView)
+export default PrescriptionView
