@@ -1,4 +1,4 @@
-import ConfigureAppointmentsView from "features/appointments/ConfigureAppointmentsView"
+import ConfigureAppointmentsView from "features/appointments/view/ConfigureAppointmentsView"
 import DashBoard from "features/dashboard"
 import ConfigureHistoryView from "features/history/ConfigureHistoryView"
 import Login from "features/Login"

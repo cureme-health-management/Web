@@ -1,6 +1,6 @@
 import React from "react"
 import { fetchAppointments } from "features/appointments/actions"
-import AppointmentsView from "features/appointments/AppointmentsView"
+import AppointmentsView from "features/appointments/view/AppointmentsView"
 import { useEffect } from "react"
 import { useDispatch } from "react-redux"
 

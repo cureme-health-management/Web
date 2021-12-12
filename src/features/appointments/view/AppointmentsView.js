@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
 import AppointmentsListView from "./AppointmentsListView"
 import CurrentAppointmentDetailsView from "./CurrentAppointmentDetailsView"
-import PrescriptionView from "./prescription/PrescriptionView"
+import PrescriptionView from "../prescription/view/PrescriptionView"
 
 const NoAppointmentsContainer = styled.div`
     max-height: calc(100vh - 100px);
